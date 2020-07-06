@@ -1,0 +1,11 @@
+{%extends 'blog/layout.html'%}
+{%load crispy_forms_tags%}
+{%block content%}
+    <legend class='border-bottom mb-5'>Are you sure that u want to delete the post {{object.id}}</legend>
+    <form method="POST">
+        {%csrf_token%}
+    <button type="submit" class="btn btn-danger">Yes</button>
+    <a href="{%url "post-detail" object.id %}" class="btn btn-info" >Cancel</a>
+    </form>
+    
+{%endblock%}

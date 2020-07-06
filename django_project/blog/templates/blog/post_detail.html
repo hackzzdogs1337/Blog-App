@@ -1,0 +1,13 @@
+{%extends 'blog/layout.html'%}
+{%block content%}
+<div class="card mt-3" style="width: 18rem;">
+    <h3 class=="card-header" >{{object.author.username}}</h3>
+    <div class='text-muted'>{{object.date_posted}}</div>
+    <div class="card-body">
+      <h5 class="card-title text-bold">{{object.title}}</h5>
+      <p class="card-text">{{object.content}}</p>
+      <a href="{%url "post-update" object.id%}" class=" btn btn-outline-info">Update</a>
+    <a href="{%url "post-delete" object.id%}" class="btn btn-danger">Delete</a>
+    </div>
+  </div>
+{%endblock%}

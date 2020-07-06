@@ -1,0 +1,14 @@
+{%extends 'blog/layout.html'%}
+{%block content%}
+    {%for post in posts%}
+    <div class="card mt-3" style="width: 18rem;">
+        <h3 class=="card-header" >{{post.author.username}}</h3>
+        <div class='text-muted'>{{post.date_posted}}</div>
+        <div class="card-body">
+          <a href="{%url "post-detail" post.id%}" class="card-title text-bold">{{post.title}}</a>
+          <p class="card-text">{{post.content}}</p>
+        </div>
+      </div>
+    {%endfor%}
+
+{%endblock content%}
